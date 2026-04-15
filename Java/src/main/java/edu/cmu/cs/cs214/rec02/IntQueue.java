@@ -1,55 +1,129 @@
 package edu.cmu.cs.cs214.rec02;
 
 /**
- * Interface describing a first-in, first-out structure for integers. Values are
- * added at the tail, and removed from the head. Queues are typically used to
- * process values in the order that they appear and to store the state of a
- * buffered object.
+ * Бүхэл тоон (Integer) өгөгдөл хадгалах дарааллын (Queue) интерфэйс.
  *
- * @author Alex Lockwood
+ * FIFO зарчимтай:
+ * 👉 Эхэлж орсон элемент → эхэлж гарна
+ *
+ * Queue нь өгөгдлийг дарааллаар боловсруулахад ашиглагддаг.
  */
 public interface IntQueue {
 
     /**
-     * Remove all the elements from the queue.
+     * Queue доторх бүх элементийг устгана.
+     * 👉 clear хийсний дараа size = 0 болно.
      */
     void clear();
 
     /**
-     * Fetch and remove the element at the head of the queue.
+     * Queue-ийн эхний элементийг авч, устгана.
      *
-     * @return 	The element at the head of the queue. Returns
-     * 			null if the queue is empty.
+     * @return
+     * 👉 Эхний элемент
+     * 👉 Хэрвээ queue хоосон бол null буцаана
      */
     Integer dequeue();
 
     /**
-     * Add the element to the tail of the queue.
+     * Queue-ийн сүүл хэсэгт шинэ элемент нэмнэ.
      *
-     * @param value	The element to place at the tail of the queue.
-     * @return 		Whether the element was enqueued successfully.
+     * @param value
+     * 👉 Нэмэх утга
+     *
+     * @return
+     * 👉 Амжилттай нэмсэн бол true
      */
     boolean enqueue(Integer value);
 
     /**
-     * Determine if the queue is empty.
+     * Queue хоосон эсэхийг шалгана.
      *
-     * @return <tt>true</tt> if the queue is empty, <tt>false</tt> otherwise.
+     * @return
+     * 👉 Хоосон бол true
+     * 👉 Элемент байвал false
      */
     boolean isEmpty();
 
     /**
-     * Fetch the element at the head of the queue.
+     * Queue-ийн эхний элементийг харна.
+     * ⚠️ Гэхдээ устгахгүй!
      *
-     * @return The element at the head of the queue. Returns null if queue
-     * 		   is empty.
+     * @return
+     * 👉 Эхний элемент
+     * 👉 Хоосон бол null
      */
     Integer peek();
 
     /**
-     * Determine the number of elements in the queue.
+     * Queue-д байгаа элементүүдийн тоог буцаана.
      *
-     * @return The number of elements in the queue.
+     * @return
+     * 👉 Элементийн тоо
+     */
+    int size();
+}package edu.cmu.cs.cs214.rec02;
+
+/**
+ * Бүхэл тоон (Integer) өгөгдөл хадгалах дарааллын (Queue) интерфэйс.
+ *
+ * FIFO зарчимтай:
+ * 👉 Эхэлж орсон элемент → эхэлж гарна
+ *
+ * Queue нь өгөгдлийг дарааллаар боловсруулахад ашиглагддаг.
+ */
+public interface IntQueue {
+
+    /**
+     * Queue доторх бүх элементийг устгана.
+     * 👉 clear хийсний дараа size = 0 болно.
+     */
+    void clear();
+
+    /**
+     * Queue-ийн эхний элементийг авч, устгана.
+     *
+     * @return
+     * 👉 Эхний элемент
+     * 👉 Хэрвээ queue хоосон бол null буцаана
+     */
+    Integer dequeue();
+
+    /**
+     * Queue-ийн сүүл хэсэгт шинэ элемент нэмнэ.
+     *
+     * @param value
+     * 👉 Нэмэх утга
+     *
+     * @return
+     * 👉 Амжилттай нэмсэн бол true
+     */
+    boolean enqueue(Integer value);
+
+    /**
+     * Queue хоосон эсэхийг шалгана.
+     *
+     * @return
+     * 👉 Хоосон бол true
+     * 👉 Элемент байвал false
+     */
+    boolean isEmpty();
+
+    /**
+     * Queue-ийн эхний элементийг харна.
+     * ⚠️ Гэхдээ устгахгүй!
+     *
+     * @return
+     * 👉 Эхний элемент
+     * 👉 Хоосон бол null
+     */
+    Integer peek();
+
+    /**
+     * Queue-д байгаа элементүүдийн тоог буцаана.
+     *
+     * @return
+     * 👉 Элементийн тоо
      */
     int size();
 }
